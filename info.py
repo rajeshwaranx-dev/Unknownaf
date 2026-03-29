@@ -87,7 +87,7 @@ SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PM_SEARCH = bool(environ.get('PM_SEARCH', True))
-EMOJI_MODE = bool(environ.get('EMOJI_MODE', True))
+EMOJI_MODE = bool(environ.get('EMOJI_MODE', False))
 BUTTON_MODE = is_enabled((environ.get('BUTTON_MODE', "False")), False)
 STREAM_MODE = bool(environ.get('STREAM_MODE', False))
 PREMIUM_STREAM_MODE = bool(environ.get('PREMIUM_STREAM_MODE', False))
@@ -96,7 +96,7 @@ LANGUAGES = {"ᴛᴀᴍɪʟ":"tam","ᴛᴇʟᴜɢᴜ":"tel","ᴇɴɢʟɪsʜ":"en
 QUALITIES = ["360P", "480P", "720P", "1080P", "2160p"]
 SEASON_COUNT = 12
 SEASONS = [f"S{str(i).zfill(2)}" for i in range(1, SEASON_COUNT + 1)]
-REACTIONS = ["🤝", "😇", "🤗", "😍", "👍", "🎅", "😐", "🥰", "🤩", "😱", "🤣", "😘", "👏", "😛", "😈", "🎉", "⚡️", "🫡", "🤓", "😎", "🏆", "🔥", "🤭", "🌚", "🆒", "👻", "😁"]
+REACTIONS = ["🤝", "😇", "🤗", "👍", "🎅", "🤩", "👏", "😈", "🎉", "⚡️", "🫡", "🤓", "😎", "🏆", "🔥", "🌚", "🆒", "👻",]
 STAR_PREMIUM_PLANS = {10: "7day", 20: "15day", 40: "1month", 55: "45day", 75: "60day"}
 BAD_WORDS = {"PrivateMovieZ", "koothi", "themoviesboss", "1tamilmv", "tamilblasters", "1tamilblasters", "skymovieshd", "extraflix", "thevidiya", "moviesmod", "hdhub4u", "mkvcinemas", "sunni", "oombu", "www", "villa", "tg", "original", "punda",}
 
