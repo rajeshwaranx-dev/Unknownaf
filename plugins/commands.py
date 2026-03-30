@@ -15,7 +15,7 @@ from datetime import datetime
 from database.refer import referdb
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ReplyKeyboardMarkup, WebAppInfo
 from pyrogram import Client, filters, enums
-from pyrogram.errors import FloodWait, ChatAdminRequired, UserNotParticipant
+from pyrogram.errors import FloodWait, ChatAdminRequired, UserNotParticipant, MessageIdInvalid
 from database.ia_filterdb import Media, Media2, get_file_details, unpack_new_file_id, get_bad_files, save_file
 from database.users_chats_db import db
 from utils import stream_buttons, get_settings, save_group_settings, is_subscribed, is_req_subscribed, get_size, get_shortlink, is_check_admin, temp, get_readable_time, get_time, generate_settings_text, log_error, clean_filename, get_status
@@ -286,8 +286,14 @@ async def start(client, message):
                 filesarr.append(msg)
             await asyncio.sleep(DELETE_TIME)
             for x in filesarr:
-                await x.delete()
-            await k.edit_text("<b>ʏᴏᴜʀ ᴀʟʟ ᴠɪᴅᴇᴏꜱ/ꜰɪʟᴇꜱ ᴀʀᴇ ᴅᴇʟᴇᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ !\nᴋɪɴᴅʟʏ ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ</b>")
+                try:
+                    await x.delete()
+                except (MessageIdInvalid, Exception):
+                    pass
+            try:
+                await k.edit_text("<b>ʏᴏᴜʀ ᴀʟʟ ᴠɪᴅᴇᴏꜱ/ꜰɪʟᴇꜱ ᴀʀᴇ ᴅᴇʟᴇᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ !\nᴋɪɴᴅʟʏ ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ</b>")
+            except (MessageIdInvalid, MessageNotModified, Exception):
+                pass
             return
         except Exception as e:
             logger.exception(e)
@@ -347,8 +353,14 @@ async def start(client, message):
                 f_caption += limit_info
             await msg.edit_caption(f_caption, reply_markup=InlineKeyboardMarkup(btn))     
             await asyncio.sleep(DELETE_TIME)
-            await msg.delete()
-            await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ/ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!</b>")
+            try:
+                await msg.delete()
+            except (MessageIdInvalid, Exception):
+                pass
+            try:
+                await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ/ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!</b>")
+            except (MessageIdInvalid, Exception):
+                pass
             return
         except Exception as e:
             logger.exception(e)
@@ -409,8 +421,14 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(btn)
     )     
     await asyncio.sleep(DELETE_TIME)
-    await msg.delete()
-    await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ/ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!</b>")
+    try:
+        await msg.delete()
+    except (MessageIdInvalid, Exception):
+        pass
+    try:
+        await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ/ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!</b>")
+    except (MessageIdInvalid, Exception):
+        pass
     return
 
 @Client.on_message(filters.command('logs') & filters.user(ADMINS))
@@ -724,7 +742,10 @@ async def update_notification(client, message):
 async def stop_button(bot, message):
     msg = await bot.send_message(text="<b><i>ʙᴏᴛ ɪꜱ ʀᴇꜱᴛᴀʀᴛɪɴɢ</i></b>", chat_id=message.chat.id)
     await asyncio.sleep(3)
-    await msg.edit("<b><i><u>ʙᴏᴛ ɪꜱ ʀᴇꜱᴛᴀʀᴛᴇᴅ</u> ✅</i></b>")
+    try:
+        await msg.edit("<b><i><u>ʙᴏᴛ ɪꜱ ʀᴇꜱᴛᴀʀᴛᴇᴅ</u> ✅</i></b>")
+    except (MessageIdInvalid, Exception):
+        pass
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 @Client.on_message(filters.command("del_msg") & filters.user(ADMINS))
@@ -734,9 +755,7 @@ async def del_msg(client, message):
         InlineKeyboardButton("ɴᴏ", callback_data="confirm_del_no")
     ]])
     sent_message = await message.reply_text("⚠️ ᴀʀᴇ ʏᴏᴜ sᴜʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʟᴇᴀʀ ᴛʜᴇ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ʟɪsᴛ ?\n\n ᴅᴏ ʏᴏᴜ ꜱᴛɪʟʟ ᴡᴀɴᴛ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ ?", reply_markup=confirm_markup)
-    await asyncio.sleep(60)
-    try:
-        await sent_message.delete()
+    
     except Exception as e:
         print(f"Error deleting the message: {e}")
 
@@ -761,7 +780,12 @@ async def save_caption(client, message):
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await message.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ...</b>")
     try:
-        caption = message.text.split(" ", 1)[1]
+        cawait asyncio.sleep(60)
+    try:
+        await sent_message.delete()
+    except MessageIdInvalid:
+        pass
+    except Exception:aption = message.text.split(" ", 1)[1]
     except:
         return await message.reply_text("<code>ɢɪᴠᴇ ᴍᴇ ᴀ ᴄᴀᴘᴛɪᴏɴ ᴀʟᴏɴɢ ᴡɪᴛʜ ɪᴛ.\n\nᴇxᴀᴍᴘʟᴇ -\n\nꜰᴏʀ ꜰɪʟᴇ ɴᴀᴍᴇ - <code>{file_name}</code>\nꜰᴏʀ ꜰɪʟᴇ ꜱɪᴢᴇ - <code>{file_size}</code>\n\n<code>/caption {file_name}</code></code>")
     await save_group_settings(grp_id, 'caption', caption)
@@ -950,7 +974,10 @@ async def all_settings(client, message):
     ]
     dlt = await message.reply_text(text, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
     await asyncio.sleep(300)
-    await dlt.delete()
+    try:
+        await dlt.delete()
+    except (MessageIdInvalid, Exception):
+        pass
 
 @Client.on_callback_query(filters.regex(r"^reset_group_(\-\d+)$"))
 async def reset_group_callback(client, callback_query):
