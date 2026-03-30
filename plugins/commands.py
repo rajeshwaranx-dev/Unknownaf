@@ -780,7 +780,7 @@ async def save_caption(client, message):
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await message.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ...</b>")
     try:
-        cawait asyncio.sleep(60)
+        await asyncio.sleep(60)
     try:
         await sent_message.delete()
     except MessageIdInvalid:
