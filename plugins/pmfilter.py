@@ -1651,15 +1651,7 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             logger.exception("Failed to send result: %s", e)
             return
-        try:
-            if settings.get('auto_delete'):
-                asyncio.create_task(_schedule_delete(sent, message, DELETE_TIME))
-        except KeyError:
-            try:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-            except Exception:
-                pass
-            asyncio.create_task(_schedule_delete(sent, message, DELETE_TIME))
+        asyncio.create_task(_schedule_delete(sent, message, 300))
         return
     except Exception as e:
         logger.exception(e)
