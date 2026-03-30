@@ -13,7 +13,7 @@ from fuzzywuzzy import process
 from web.utils import get_name, get_hash
 from urllib.parse import quote_plus
 from database.ia_filterdb import Media, Media2, get_file_details, get_search_results, get_bad_files
-from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid, ChatAdminRequired, UserNotParticipant
+from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, MessageIdInvalid, PeerIdInvalid, ChatAdminRequired, UserNotParticipant
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, WebAppInfo, InputMediaPhoto
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
@@ -303,7 +303,10 @@ async def advantage_spoll_choker(bot, query):
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴀᴅᴍɪɴ 📩", user_id=int(OWNER))]])
         k = await query.message.edit(script.NOT_FOUND_TXT, reply_markup=btn)
         await asyncio.sleep(10)
-        await k.delete()
+        try:
+            await k.delete()
+        except (MessageIdInvalid, Exception):
+            pass
 
 @Client.on_callback_query(filters.regex(r"^qualities#"))
 async def qualities_cb_handler(client: Client, query: CallbackQuery):
@@ -1105,7 +1108,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             xo = await query.message.reply_text(f'❤‍🔥')
             await asyncio.sleep(1)
-            await xo.delete()
+            try:
+                await xo.delete()
+            except (MessageIdInvalid, Exception):
+                pass
             rd = await log_msg.reply_text(
                 text=f"‣ ɪᴅ : `{user_id}`\n‣ ʙʏ : {username}\n\n‣ ꜰɪʟᴇ ɴᴀᴍᴇ : {fileName}",
                 quote=True,
@@ -1124,9 +1130,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ])
             )
             await asyncio.sleep(DELETE_TIME)
-            await tb.delete()
-            await log_msg.delete()
-            await rd.delete()
+            for _msg in [tb, log_msg, rd]:
+                try:
+                    await _msg.delete()
+                except (MessageIdInvalid, Exception):
+                    pass
             return
         except Exception as e:
             print(e)
@@ -1141,7 +1149,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💎 ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ 💎", callback_data="premium")]])
         )
         await asyncio.sleep(DELETE_TIME)
-        await tb.delete()
+        try:
+            await tb.delete()
+        except (MessageIdInvalid, Exception):
+            pass
 
     elif query.data == "start":
         buttons = [[
@@ -1237,7 +1248,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
         await asyncio.sleep(DELETE_TIME)
-        await msg.delete()
+        try:
+            await msg.delete()
+        except (MessageIdInvalid, Exception):
+            pass
 
     elif query.data == "group_cmds":
         buttons = [[
@@ -1358,7 +1372,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 await client.send_message(LOG_CHANNEL, text=f"#FREE_TRAIL\n\n👤 ᴜꜱᴇʀ ɴᴀᴍᴇ - {query.from_user.mention}\n⚡ ᴜꜱᴇʀ ɪᴅ - {user_id}", disable_web_page_preview=True)
                 await asyncio.sleep(DELETE_TIME)
-                return await msg.delete()
+                try:
+                    await msg.delete()
+                except (MessageIdInvalid, Exception):
+                    pass
+                return
         except Exception as e:
             logging.exception("Error in free_trial callback")
 
@@ -1695,7 +1713,7 @@ async def advantage_spell_chok(client, message):
             await asyncio.sleep(60)
             try:
                 await k.delete()
-            except Exception:
+            except (MessageIdInvalid, Exception):
                 pass
         except Exception:
             pass
@@ -1709,7 +1727,10 @@ async def advantage_spell_chok(client, message):
         button = [[InlineKeyboardButton("🔍 ᴄʜᴇᴄᴋ sᴘᴇʟʟɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ 🔍", url=f"https://www.google.com/search?q={google}")]]
         k = await message.reply_text(text=script.I_CUDNT.format(search), reply_markup=InlineKeyboardMarkup(button))
         await asyncio.sleep(60)
+    try:
         await k.delete()
+    except (MessageIdInvalid, Exception):
+        pass
         try:
             await message.delete()
         except:
