@@ -72,7 +72,10 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         await asyncio.sleep(300)
-        await dlt.delete()
+        try:
+            await dlt.delete()
+        except (MessageIdInvalid, Exception):
+            pass
         return
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         if not await db.get_chat(message.chat.id):
@@ -82,7 +85,10 @@ async def start(client, message):
         status = get_status()
         tb = await message.reply_text(f"<b>🔥 ʏᴇs {status},\nʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ??</b>")
         await asyncio.sleep(600)
-        await tb.delete()
+        try:
+            await tb.delete()
+        except (MessageIdInvalid, Exception):
+            pass
         await m.delete()
         return 
     if not await db.is_user_exist(message.from_user.id):
@@ -106,7 +112,10 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await message.reply_sticker("CAACAgUAAxkBAAI47WjK1V24t_kyUL-ywJQQdxtaWnaeAAIMFgACpzEZVdpZS0jMvfn5HgQ")
         await asyncio.sleep(2)
-        await m.delete()        
+        try:
+            await m.delete()
+        except (MessageIdInvalid, Exception):
+            pass
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, get_status(), temp.U_NAME or '', temp.B_NAME or ''),
@@ -241,8 +250,14 @@ async def start(client, message):
                     parse_mode=enums.ParseMode.HTML
                 )
                 await asyncio.sleep(300) 
-                await n.delete()
-                await m.delete()
+                try:
+                    await n.delete()
+                except (MessageIdInvalid, Exception):
+                    pass
+                try:
+                    await m.delete()
+                except (MessageIdInvalid, Exception):
+                    pass
                 return
         except Exception as e:
             print(f"Error In Verification - {e}")
@@ -292,7 +307,7 @@ async def start(client, message):
                     pass
             try:
                 await k.edit_text("<b>ʏᴏᴜʀ ᴀʟʟ ᴠɪᴅᴇᴏꜱ/ꜰɪʟᴇꜱ ᴀʀᴇ ᴅᴇʟᴇᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ !\nᴋɪɴᴅʟʏ ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ</b>")
-            except (MessageIdInvalid, MessageNotModified, Exception):
+            except (MessageIdInvalid, Exception):
                 pass
             return
         except Exception as e:
@@ -366,8 +381,6 @@ async def start(client, message):
             logger.exception(e)
             pass
         return await message.reply('ɴᴏ ꜱᴜᴄʜ ꜰɪʟᴇ ᴇxɪꜱᴛꜱ !')
-    
-    files = files_[0]
     if IS_FILE_LIMIT and not is_premium:
         used = await db.get_user_file_count(user)
         hours, minutes = await db.get_time_until_reset(user)
@@ -684,7 +697,10 @@ async def deletemultiplefiles(bot, message):
     if total == 0:
         await k.edit_text(f"<b>No files found for your query {keyword} !</b>")
         await asyncio.sleep(DELETE_TIME)
-        await k.delete()
+        try:
+            await k.delete()
+        except (MessageIdInvalid, Exception):
+            pass
         return
     await k.delete()
     btn = [[
@@ -755,8 +771,10 @@ async def del_msg(client, message):
         InlineKeyboardButton("ɴᴏ", callback_data="confirm_del_no")
     ]])
     sent_message = await message.reply_text("⚠️ ᴀʀᴇ ʏᴏᴜ sᴜʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʟᴇᴀʀ ᴛʜᴇ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ʟɪsᴛ ?\n\n ᴅᴏ ʏᴏᴜ ꜱᴛɪʟʟ ᴡᴀɴᴛ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ ?", reply_markup=confirm_markup)
-    
-    except Exception as e:
+    await asyncio.sleep(60)
+    try:
+        await sent_message.delete()
+    except (MessageIdInvalid, Exception) as e:
         print(f"Error deleting the message: {e}")
 
 @Client.on_callback_query(filters.regex('^confirm_del_'))
@@ -780,12 +798,7 @@ async def save_caption(client, message):
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await message.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ...</b>")
     try:
-        await asyncio.sleep(60)
-    try:
-        await sent_message.delete()
-    except MessageIdInvalid:
-        pass
-    except Exception:aption = message.text.split(" ", 1)[1]
+        caption = message.text.split(" ", 1)[1]
     except:
         return await message.reply_text("<code>ɢɪᴠᴇ ᴍᴇ ᴀ ᴄᴀᴘᴛɪᴏɴ ᴀʟᴏɴɢ ᴡɪᴛʜ ɪᴛ.\n\nᴇxᴀᴍᴘʟᴇ -\n\nꜰᴏʀ ꜰɪʟᴇ ɴᴀᴍᴇ - <code>{file_name}</code>\nꜰᴏʀ ꜰɪʟᴇ ꜱɪᴢᴇ - <code>{file_size}</code>\n\n<code>/caption {file_name}</code></code>")
     await save_group_settings(grp_id, 'caption', caption)
@@ -841,7 +854,10 @@ async def handle_shortner_command(c, m, shortner_key, api_key, log_prefix, fallb
         )
     sts = await m.reply("<b>♻️ ᴄʜᴇᴄᴋɪɴɢ...</b>")
     await asyncio.sleep(1.2)
-    await sts.delete()
+    try:
+        await sts.delete()
+    except (MessageIdInvalid, Exception):
+        pass
     if m.chat.type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await m.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ...</b>")
     try:
@@ -894,7 +910,10 @@ async def set_log(client, message):
         return
     sts = await message.reply("<b>♻️ ᴄʜᴇᴄᴋɪɴɢ...</b>")
     await asyncio.sleep(1.2)
-    await sts.delete()
+    try:
+        await sts.delete()
+    except (MessageIdInvalid, Exception):
+        pass
     chat_type = message.chat.type
     if chat_type not in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         return await message.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪɴ ɢʀᴏᴜᴘ...</b>")
@@ -907,7 +926,10 @@ async def set_log(client, message):
     try:
         t = await client.send_message(chat_id=log, text="<b>ʜᴇʏ ᴡʜᴀᴛ's ᴜᴘ!!</b>")
         await asyncio.sleep(3)
-        await t.delete()
+        try:
+            await t.delete()
+        except (MessageIdInvalid, Exception):
+            pass
     except Exception as e:
         return await message.reply_text(f'<b><u>😐 ᴍᴀᴋᴇ sᴜʀᴇ ᴛʜɪs ʙᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴀᴛ ᴄʜᴀɴɴᴇʟ...</u>\n\n💔 ᴇʀʀᴏʀ - <code>{e}</code></b>')
     await save_group_settings(grp_id, 'log', log)
