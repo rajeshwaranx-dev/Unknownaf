@@ -381,6 +381,8 @@ async def start(client, message):
             logger.exception(e)
             pass
         return await message.reply('ɴᴏ ꜱᴜᴄʜ ꜰɪʟᴇ ᴇxɪꜱᴛꜱ !')
+    
+    files = files_[0]
     if IS_FILE_LIMIT and not is_premium:
         used = await db.get_user_file_count(user)
         hours, minutes = await db.get_time_until_reset(user)
