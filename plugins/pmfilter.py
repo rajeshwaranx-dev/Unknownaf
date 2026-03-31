@@ -1713,7 +1713,7 @@ async def advantage_spell_chok(client, message):
             await asyncio.sleep(60)
             try:
                 await k.delete()
-            except (MessageIdInvalid, Exception):
+            except Exception:
                 pass
         except Exception:
             pass
@@ -1727,10 +1727,10 @@ async def advantage_spell_chok(client, message):
         button = [[InlineKeyboardButton("🔍 ᴄʜᴇᴄᴋ sᴘᴇʟʟɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ 🔍", url=f"https://www.google.com/search?q={google}")]]
         k = await message.reply_text(text=script.I_CUDNT.format(search), reply_markup=InlineKeyboardMarkup(button))
         await asyncio.sleep(60)
-    try:
-        await k.delete()
-    except (MessageIdInvalid, Exception):
-        pass
+        try:
+            await k.delete()
+        except (MessageIdInvalid, Exception):
+            pass
         try:
             await message.delete()
         except:
@@ -1741,7 +1741,10 @@ async def advantage_spell_chok(client, message):
     buttons.append([InlineKeyboardButton(text="🚫 ᴄʟᴏsᴇ 🚫", callback_data='close_data')])
     d = await message.reply_text(text=script.CUDNT_FND.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=message.id)
     await asyncio.sleep(60)
-    await d.delete()
+    try:
+        await d.delete()
+    except (MessageIdInvalid, Exception):
+        pass
     try:
         await message.delete()
     except:
