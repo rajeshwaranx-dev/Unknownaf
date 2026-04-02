@@ -1521,7 +1521,8 @@ async def auto_filter(client, msg, spoll=False):
         key = f"{message.chat.id}-{message.id}"
         FRESH[key] = search
         temp.GETALL[key] = files
-        temp.SHORT[message.from_user.id] = message.chat.id
+        if message.from_user:
+            temp.SHORT[message.from_user.id] = message.chat.id
         if settings.get('button'):
             btn = [
                 [InlineKeyboardButton(text=f"{get_size(file.file_size)} ≽ clean_filename(file.file_name)", callback_data=f'file#{file.file_id}')]
@@ -1620,13 +1621,16 @@ async def auto_filter(client, msg, spoll=False):
                 url=imdb['url'],
                 **locals()
             )
-            temp.IMDB_CAP[message.from_user.id] = cap
+            if message.from_user:
+                temp.IMDB_CAP[message.from_user.id] = cap
+    
             if not settings.get('button'):
                 cap += "\n\n<b>♻️ <u>ʀᴇꜱᴜʟᴛꜱ ꜰᴏʀ ʏᴏᴜʀ sᴇᴀʀᴄʜ</u></b>"
                 for idx, file in enumerate(files, start=1):
                     cap += f"<b>\n{idx}. <a href='https://telegram.me/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}'>[{get_size(file.file_size)}] {clean_filename(file.file_name)}\n</a></b>"
         else:
-            temp.IMDB_CAP[message.from_user.id] = None
+            if message.from_user:
+                temp.IMDB_CAP[message.from_user.id] = None
             if FAST_MODE:
                 if settings.get('button'):
                     cap = f"<b>🙋‍♂ {message.from_user.mention}\n⏰ ʀᴇsᴜʟᴛ ɪɴ : <code>{remaining_seconds}</code> ꜱᴇᴄᴏɴᴅs\n\n♻️ <u>ʀᴇꜱᴜʟᴛꜱ ꜰᴏʀ ʏᴏᴜʀ sᴇᴀʀᴄʜ</u>\n\n</b>"
