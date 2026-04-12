@@ -3,10 +3,11 @@ class script(object):
 
 ɪ ᴀᴍ <a href="https://telegram.me/{}">{}</a>, ɪ ᴀᴍ ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏꜰɪʟᴛᴇʀ ʙᴏᴛ. ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ɢɪᴠᴇ ᴍᴏᴠɪᴇs ᴏʀ sᴇʀɪᴇs ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴘᴍ !! ❤‍🔥
 
-<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/AskMovies4">AskMovies &lt;/&gt;</a></blockquote>"""
+<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/Indian_HDT">Indian_HDT &lt;/&gt;</a></blockquote>"""
 
     ABOUT_TXT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href=https://telegram.me/{}>{}</a>
 ‣ ᴄʀᴇᴀᴛᴏʀ : <a href='https://telegram.me/Master_Xkid'>Master</a> 
+‣ Owner : <a href='https://telegram.me/bharathp0203'>Bharath</a> 
 ‣ ʟɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a>
 ‣ ʟᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a> 
 ‣ ᴅᴀᴛᴀ ʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏ ᴅʙ</a> 
@@ -128,7 +129,7 @@ class script(object):
 ⚡️ ᴄᴜꜱᴛᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛs ᴀɴᴅ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ
 
 📩 <b>ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ :</b>  
-<a href='https://t.me/Master_xkid'>👉 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴅᴍ</a>
+<a href='https://t.me/bharathp0203'>👉 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴅᴍ</a>
 
 💡 <b>ɴᴏᴛᴇ :</b> ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ꜰᴜʟʟ ꜱᴇᴛᴜᴘ ᴀɴᴅ ꜱᴜᴘᴘᴏʀᴛ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.
 </i></b>"""
@@ -144,7 +145,7 @@ class script(object):
 
 <b>‣ ꜱɪᴢᴇ : </b>{file_size}
 
-<b>🍁 ʙʏ : <a href="https://telegram.me/Askmovies4">[ Askmovies ]</a></b>"""
+<b>🍁 ʙʏ : <a href="https://telegram.me/Indian_HDT">[ Indian_HDT ]</a></b>"""
 
     IMDB_TEMPLATE_TXT = """<b><a href={url}>{title} (<a href={url}/releaseinfo>{year}</a>)
 
