@@ -3,7 +3,7 @@ class script(object):
 
 ɪ ᴀᴍ <a href="https://telegram.me/{}">{}</a>, ɪ ᴀᴍ ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏꜰɪʟᴛᴇʀ ʙᴏᴛ. ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪ ᴡɪʟʟ ɢɪᴠᴇ ᴍᴏᴠɪᴇs ᴏʀ sᴇʀɪᴇs ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴘᴍ !! ❤‍🔥
 
-<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/https://t.me/indian_tha">Indian_HDT &lt;/&gt;</a></blockquote>"""
+<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/indian_tha">Indian_HDT &lt;/&gt;</a></blockquote>"""
 
     ABOUT_TXT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href=https://telegram.me/{}>{}</a>
 ‣ ᴄʀᴇᴀᴛᴏʀ : <a href='https://telegram.me/Master_Xkid'>Master</a> 
