@@ -145,7 +145,7 @@ class script(object):
 
 <b>‣ ꜱɪᴢᴇ : </b>{file_size}
 
-<b>🍁 ʙʏ : <a href="https://telegram.me/Indian_HDT">[ Indian_HDT ]</a></b>"""
+<b>🍁 ʙʏ : <a href="https://telegram.me/Indian_tha">[ Indian_HDT ]</a></b>"""
 
     IMDB_TEMPLATE_TXT = """<b><a href={url}>{title} (<a href={url}/releaseinfo>{year}</a>)
 
@@ -176,7 +176,7 @@ sʜᴏᴡɴ ɪɴ : {remaining_seconds} <i>sᴇᴄ</i>⚡️
 ◉ 𝟼 ᴍᴏɴᴛʜ - 𝟷𝟸𝟿 ₹ / 𝟾𝟶 ꜱᴛᴀʀ
 
 •─────•─────────•─────•
-🏷️ <a href='https://telegram.me/Master_xkid'>ꜰᴏʀ ᴄᴜꜱᴛᴏᴍ ᴘʟᴀɴꜱ</a>
+🏷️ <a href='https://t.me/indianHDT_admin_bot'>ꜰᴏʀ ᴄᴜꜱᴛᴏᴍ ᴘʟᴀɴꜱ</a>
 
 ‼️ ᴍᴜꜱᴛ ꜱᴇɴᴅ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ᴀꜰᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 ‼️ ᴀꜰᴛᴇʀ ꜱᴇɴᴅɪɴɢ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ɢɪᴠᴇ ᴜꜱ ꜱᴏᴍᴇᴛɪᴍᴇꜱ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴘʀᴇᴍɪᴜᴍ ʟɪꜱᴛ."""
@@ -193,7 +193,7 @@ sʜᴏᴡɴ ɪɴ : {remaining_seconds} <i>sᴇᴄ</i>⚡️
 
 ʏᴏᴜ ᴄᴀɴ ᴘᴜʀᴄʜᴀꜱᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜʀᴏᴜɢʜ ᴜᴘɪ , ɴᴇᴛ ʙᴀɴᴋɪɴɢ.
 
-💳 <a href='https://askpayments.vercel.app/'>ᴘᴀʏ ᴡɪᴛʜ ᴜᴘɪ</a>
+💳 <a href='https://t.me/indianHDT_admin_bot'>ᴘᴀʏ ᴡɪᴛʜ ᴜᴘɪ</a>
 
 💢 ᴍᴜꜱᴛ ꜱᴇɴᴅ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ᴀꜰᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 
