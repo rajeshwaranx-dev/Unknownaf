@@ -199,7 +199,7 @@ async def premium_button(client, callback_query: CallbackQuery):
     except Exception as e:
         print(f"Error In buy_ - {e}")
  
-@Client.on_message(filters.pre_checkout_query
+@Client.on_pre_checkout_query()
 async def pre_checkout_handler(client, query: PreCheckoutQuery):
     try:
         if query.payload.startswith("tb_"):
