@@ -14,35 +14,35 @@ def is_enabled(value, default):
         return default
 
 SESSION = environ.get('SESSION', 'techifybots')
-API_ID = int(environ.get('API_ID', '23361081'))
-API_HASH = environ.get('API_HASH', '0605c5395b91ead763072251e20c3417')
-BOT_TOKEN = environ.get('BOT_TOKEN', "8197587587:AAHuddULLw9McdruRKBZzqJhcNFRFqRXJG4")
+API_ID = int(environ.get('API_ID', '23173288'))
+API_HASH = environ.get('API_HASH', '94f82e41c43528971068bcd31d4a20e9')
+BOT_TOKEN = environ.get('BOT_TOKEN', "7605918235:AAEyQwJEOMPKQwh5DcryaYGpA5URkcn8aDA")
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 INDEX_CAPTION = bool(environ.get('INDEX_CAPTION', False))
 COVER = bool(environ.get('COVER', False))
-PICS = (environ.get('PICS', 'https://graph.org/file/dc8d94be0c5b2c9693e75-707e6fdfb7fc8d3e2c.jpg')).split()
-QR_PIC = environ.get('QR_PIC', 'https://graph.org/file/70d6683aab0aaedc01973-acad0c1612c516f68a.jpg')
+PICS = (environ.get('PICS', 'https://graph.org/file/5446bb448597452342da9-1480cc0e0765cf3576.jpg')).split()
+QR_PIC = environ.get('QR_PIC', 'https://graph.org/file/5446bb448597452342da9-1480cc0e0765cf3576.jpg')
 MELCOW_PHOTO = environ.get("MELCOW_PHOTO", "https://i.ibb.co/2769f1rF/photo-2025-09-03-14-48-34-7548400762112442372.jpg")
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7246154050 ').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002030715343').split()]
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002289263173'))
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7246154050 6632419944 1664503428').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002382180624').split()]
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002105746544'))
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '0'))
-PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002737733323'))
+PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002105746544'))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
-AUTH_CHANNELS = [int(ch) for ch in environ.get("AUTH_CHANNELS", "").split() if ch and id_pattern.match(ch)]
-AUTH_REQ_CHANNELS = [int(ch) for ch in environ.get("AUTH_REQ_CHANNELS", "-1003860082364 -1003894112861").split() if ch and id_pattern.match(ch)]
-REQST_CHANNEL = int(ch) if (ch := environ.get("REQST_CHANNEL", "-1002497903505")) and id_pattern.search(ch) else None
+AUTH_CHANNELS = [int(ch) for ch in environ.get("AUTH_CHANNELS", "-1002611385793").split() if ch and id_pattern.match(ch)]
+AUTH_REQ_CHANNELS = [int(ch) for ch in environ.get("AUTH_REQ_CHANNELS", "").split() if ch and id_pattern.match(ch)]
+REQST_CHANNEL = int(ch) if (ch := environ.get("REQST_CHANNEL", "")) and id_pattern.search(ch) else None
 SUPPORT_CHAT_ID = int(ch) if (ch := environ.get("SUPPORT_CHAT_ID", "-1002844979596")) and id_pattern.search(ch) else None
 
 OWNER = int(os.environ.get("OWNER", "5371238852"))
-CHANNEL_LINK = environ.get('CHANNEL_LINK', 'https://telegram.me/Master_xkid')
-GROUP_LINK = environ.get('GROUP_LINK', 'https://telegram.me/Askmovieslink1')
+CHANNEL_LINK = environ.get('CHANNEL_LINK', 'https://telegram.me/bharathp0203')
+GROUP_LINK = environ.get('GROUP_LINK', 'https://telegram.me/Indian_HDT')
 
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Rajeshuri2:Rajeshx2@cluster0.sql2rpv.mongodb.net/?appName=Cluster0")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Rajeshuri2")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'RajeshLcu2')
-MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "True"), False)
-DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://RajeshLcu2:Rajeshx@cluster0.0razpdy.mongodb.net/?appName=Cluster0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://IndianHDT:Ragul07@indianhdtfiles.yz2qu.mongodb.net/?retryWrites=true&w=majority&appName=IndianHDTFiles")
+DATABASE_NAME = environ.get('DATABASE_NAME', "IndianHDTFiles")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', '')
+MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "False"), False)
+DATABASE_URI2 = environ.get('DATABASE_URI2', "")
 
 UPDATE_NOTIFICATION = bool(environ.get('UPDATE_NOTIFICATION', False))
 UPDATE_CHANNEL = int(environ.get('UPDATE_CHANNEL', '-1002197398349'))
@@ -56,15 +56,15 @@ LANDSCAPE_POSTER = bool(environ.get('LANDSCAPE_POSTER', True))
 IS_VERIFY = is_enabled('IS_VERIFY', True)
 LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002289263173'))
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://i.ibb.co/xqNtSMpS/photo-2025-09-18-15-24-38-7551450511015149572.jpg")
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/Tutorial01Ask")
-TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/Tutorial01Ask")
-TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/Tutorial01Ask")
-SHORTENER_API = environ.get("SHORTENER_API", "af9171ecc18e306689e6bfc77b59df21801f8221")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "softurl.in")
-SHORTENER_API2 = environ.get("SHORTENER_API2", "af9171ecc18e306689e6bfc77b59df21801f8221")
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "softurl.in")
-SHORTENER_API3 = environ.get("SHORTENER_API3", "af9171ecc18e306689e6bfc77b59df21801f8221")
-SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", "softurl.in")
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/")
+TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/")
+TUTORIAL_3 = environ.get("TUTORIAL_3", "https://t.me/")
+SHORTENER_API = environ.get("SHORTENER_API", "b5c42395167416d568834089b2bfcd6748e6c7ef")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "indiaearnx.com")
+SHORTENER_API2 = environ.get("SHORTENER_API2", "b5c42395167416d568834089b2bfcd6748e6c7ef")
+SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "indiaearnx.com")
+SHORTENER_API3 = environ.get("SHORTENER_API3", "b5c42395167416d568834089b2bfcd6748e6c7ef")
+SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", "indiaearnx.com")
 TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "43200"))
 THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "54000"))
 
@@ -87,7 +87,7 @@ SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PM_SEARCH = bool(environ.get('PM_SEARCH', True))
-EMOJI_MODE = bool(environ.get('EMOJI_MODE', False))
+EMOJI_MODE = bool(environ.get('EMOJI_MODE', True))
 BUTTON_MODE = is_enabled((environ.get('BUTTON_MODE', "False")), False)
 STREAM_MODE = bool(environ.get('STREAM_MODE', False))
 PREMIUM_STREAM_MODE = bool(environ.get('PREMIUM_STREAM_MODE', False))
@@ -105,7 +105,7 @@ FILES_LIMIT = int(environ.get("FILES_LIMIT", "48"))
 QUALITY_LIMIT = bool(environ.get('QUALITY_LIMIT', False)) 
 FREE_QUALITIES = ["360p", "480p"]
 
-PORT = int(environ.get("PORT", "8009"))
+PORT = int(environ.get("PORT", "8002"))
 NO_PORT = bool(environ.get('NO_PORT', False))
 APP_NAME = None
 if 'DYNO' in environ:
