@@ -168,10 +168,7 @@ sʜᴏᴡɴ ɪɴ : {remaining_seconds} <i>sᴇᴄ</i>⚡️
 
     PREMIUM_TEXT = """<blockquote>🎖️ <b>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</b></blockquote>
 
-◉ 𝟷 ᴡᴇᴇᴋ - 𝟷𝟻 ₹ / 𝟷𝟶 ꜱᴛᴀʀ
-◉ 𝟷 ᴍᴏɴᴛʜ - 𝟹𝟿 ₹ / 𝟸𝟶 ꜱᴛᴀʀ
-◉ 𝟹 ᴍᴏɴᴛʜ - 𝟿𝟿 ₹ / 𝟻𝟶 ꜱᴛᴀʀ
-◉ 𝟼 ᴍᴏɴᴛʜ - 𝟷𝟸𝟿 ₹ / 𝟾𝟶 ꜱᴛᴀʀ
+◉ 𝟼 Hours - 5 ₹ / 5 ꜱᴛᴀʀ
 
 •─────•─────────•─────•
 🏷️ <a href='https://t.me/indianHDT_admin_bot'>ꜰᴏʀ ᴄᴜꜱᴛᴏᴍ ᴘʟᴀɴꜱ</a>
