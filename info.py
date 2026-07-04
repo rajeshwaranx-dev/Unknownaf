@@ -35,7 +35,7 @@ REQST_CHANNEL = int(ch) if (ch := environ.get("REQST_CHANNEL", "")) and id_patte
 SUPPORT_CHAT_ID = int(ch) if (ch := environ.get("SUPPORT_CHAT_ID", "-1002844979596")) and id_pattern.search(ch) else None
 
 OWNER = int(os.environ.get("OWNER", "1664503428"))
-CHANNEL_LINK = environ.get('CHANNEL_LINK', 'https://telegram.me/bharathp0203')
+CHANNEL_LINK = environ.get('CHANNEL_LINK', 'https://t.me/indian_tha')
 GROUP_LINK = environ.get('GROUP_LINK', 'https://telegram.me/Indian_HDT')
 
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://IndianHDT:Ragul07@indianhdtfiles.yz2qu.mongodb.net/?retryWrites=true&w=majority&appName=IndianHDTFiles")
