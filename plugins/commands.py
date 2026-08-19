@@ -101,8 +101,8 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('⇒ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⇐', url=f'https://t.me/{temp.U_NAME}?startgroup=start')
                 ],[
-                    InlineKeyboardButton('🛠 Group', url='https://t.me/+Dx8QmWgPTN0wM2Jl'),
-                    InlineKeyboardButton('Channel 🎫', url='https://telegram.me/indian_tha')
+                    InlineKeyboardButton('🛠 Group', url='https://t.me/tamil_movie_request_01'),
+                    InlineKeyboardButton('Channel 🎫', url='https://telegram.me/tamilmovieszoro')
 
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
