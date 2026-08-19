@@ -5,7 +5,7 @@ class script(object):
 
     ABOUT_TXT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href=https://telegram.me/{}>{}</a>
 ‣ ᴄʀᴇᴀᴛᴏʀ : <a href='https://telegram.me/Master_Xkid'>Master</a> 
-‣ Owner : <a href='https://telegram.me/bharathp0203'>Bharath</a> 
+‣ Owner : <a href='https://t.me/Pradanth2621v'>Luffy</a> 
 ‣ ʟɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a>
 ‣ ʟᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a> 
 ‣ ᴅᴀᴛᴀ ʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏ ᴅʙ</a> 
@@ -129,7 +129,7 @@ class script(object):
 ⚡️ ᴄᴜꜱᴛᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛs ᴀɴᴅ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ
 
 📩 <b>ᴄᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ :</b>  
-<a href='https://t.me/bharathp0203'>👉 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴅᴍ</a>
+<a href='https://t.me/Pradanth2621v'>👉 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴅᴍ</a>
 
 💡 <b>ɴᴏᴛᴇ :</b> ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ꜰᴜʟʟ ꜱᴇᴛᴜᴘ ᴀɴᴅ ꜱᴜᴘᴘᴏʀᴛ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.
 </i></b>"""
@@ -145,7 +145,7 @@ class script(object):
 
 <b>‣ ꜱɪᴢᴇ : </b>{file_size}
 
-<b>🍁 ʙʏ : <a href="https://telegram.me/Indian_tha">[ Indian_HDT ]</a></b>"""
+<b>🍁 ʙʏ : <a href="https://telegram.me/tamilmovieszoro">[ Movieszoro ]</a></b>"""
 
     IMDB_TEMPLATE_TXT = """<b><a href={url}>{title} (<a href={url}/releaseinfo>{year}</a>)
 
@@ -170,10 +170,11 @@ sʜᴏᴡɴ ɪɴ : {remaining_seconds} <i>sᴇᴄ</i>⚡️
 
     PREMIUM_TEXT = """<blockquote>🎖️ <b>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</b></blockquote>
 
-◉ 𝟼 Hours - 5 ₹ / 5 ꜱᴛᴀʀ
-
+◉ 1 day - 5₹ 
+◉ 1 week - 15₹
+◉ 1 Month - 39₹
 •─────•─────────•─────•
-🏷️ <a href='https://t.me/indianHDT_admin_bot'>ꜰᴏʀ ᴄᴜꜱᴛᴏᴍ ᴘʟᴀɴꜱ</a>
+🏷️ <a href='https://t.me/Pradanth2621v'>ꜰᴏʀ ᴄᴜꜱᴛᴏᴍ ᴘʟᴀɴꜱ</a>
 
 ‼️ ᴍᴜꜱᴛ ꜱᴇɴᴅ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ᴀꜰᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 ‼️ ᴀꜰᴛᴇʀ ꜱᴇɴᴅɪɴɢ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ɢɪᴠᴇ ᴜꜱ ꜱᴏᴍᴇᴛɪᴍᴇꜱ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴘʀᴇᴍɪᴜᴍ ʟɪꜱᴛ."""
@@ -190,7 +191,7 @@ sʜᴏᴡɴ ɪɴ : {remaining_seconds} <i>sᴇᴄ</i>⚡️
 
 ʏᴏᴜ ᴄᴀɴ ᴘᴜʀᴄʜᴀꜱᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜʀᴏᴜɢʜ ᴜᴘɪ , ɴᴇᴛ ʙᴀɴᴋɪɴɢ.
 
-💳 <a href='https://t.me/indianHDT_admin_bot'>ᴘᴀʏ ᴡɪᴛʜ ᴜᴘɪ</a>
+💳 <a href='https://movies-zoro.vercel.app/'>ᴘᴀʏ ᴡɪᴛʜ ᴜᴘɪ</a>
 
 💢 ᴍᴜꜱᴛ ꜱᴇɴᴅ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ᴀꜰᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 
